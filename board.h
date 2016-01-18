@@ -14,6 +14,7 @@
 
    /* Matrix can have only these two values*/
 		enum value { KNOT=0 , CROSS=1 , NONE = -1};
+		enum result { LOSS=-1 , WIN =1 , DRAW=0};
 
 	class board
 	{
@@ -27,26 +28,34 @@
 		/*Copy constructor disallowed*/
 		board( const board& ); 
 		/*Assignment operator disallowed*/
-		board& operator=( board&); 
+		void operator=( const board&);
+
+		friend class player;
+	public :
 		/* This function sets a vlue at a partiular position 
 		   in the board.
-		   It is made private because only player can set the 
-		   board elements
 		*/
 		void set (const value& , const int & , const int &  );
 
-		friend class player;
-	public : 
+		/* Function to return the value of any element of matrix*/
+		int get(const int& , const int &);
+		
+		/* Function to return at what level the board is being played*/
+		const int getLevel();
+		
+		~board();
+		
+		/*Displays the board*/
+		void display();
+		
+		/* Tells if the game has ended or not */
+		result checkGameState(); 
+		
 		/*Function to return the only board that exists*/
-		static board& getInstance()
+		static board& getBoard()
 		{
 			return mBoard;
 		}
-		
-		~board();
-		/*Displays the board*/
-		void display();
-
 	}; 
 
    #endif
