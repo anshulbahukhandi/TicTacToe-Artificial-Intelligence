@@ -8,10 +8,8 @@
 
    #ifndef BOARD_H_
    #define BOARD_H_
-
    #include<iostream>
-   #include<fstream>
-
+   #include<iomanip>
    /* Matrix can have only these two values*/
 		enum value { KNOT=0 , CROSS=1 , NONE = -1};
 		enum result { LOSS=-1 , WIN =1 , DRAW=0};

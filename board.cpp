@@ -9,6 +9,12 @@ board::board()
 	for ( int i =0 ; i<3 ; i++)
 			for ( int j=0 ; j < 3 ; j++)
 				mMatrix[i][j]=NONE;
+
+			cout<<"\n\n";
+
+			cout<<setw(50)<<" "<<"Welcome to TIC-TAC-TOE\n";
+			cout<<setw(50)<<" "<<"~~~~~~~~~~~~~~~~~~~~~~\n";
+			cout<<setw(50)<<" "<<"~~~~~~~~~~~~~~~~~~~~~~\n";
 }
 
 board::~board()
@@ -69,7 +75,7 @@ result board::checkGameState()
 	   (mMatrix[0][2]==CROSS && mMatrix[1][1]==CROSS && mMatrix[2][0]==CROSS)
 	  ) 
 		{return LOSS;}
-	else return DRAW;	
+		else return DRAW;
 }
 
 board::board( const board& b )
