@@ -18,7 +18,7 @@ int main()
 	player& p = player::getPlayer();
  	
 	char name[30]; 
-	cout<<"Who the f**k are you : ";
+	cout<<"Enter your name: ";
 	cin.getline(name,30); 
 
 	b.display();
@@ -27,7 +27,7 @@ int main()
 	{	
 		if(b.getLevel()==9 )
 		{
-			cout<<"Game is a Draw!!. MaadarChod\n";
+			cout<<"Game is a Draw!!.\n";
 			break;
 		}
 		if((b.getLevel()+1)%2!=0)
@@ -36,13 +36,13 @@ int main()
 			/*Human turn*/
 			while(true)
 			{
-				cout<<"Your turn Mofo . Enter the row-column number : ";
+				cout<<"Your turn. Enter the row-column number : ";
 				cin>>x>>y;
 
 				if(b.get(x-1 , y-1)== -1 )
 					break;
 				else
-					cout<<"Place Aready Filled .Are you f**king blind . Lame Asshole\n ";		
+					cout<<"Place Aready Filled. Renter\n ";		
 			}
 			b.set(CROSS,x-1,y-1);
 			b.display();
@@ -60,7 +60,7 @@ int main()
 			cout<<endl;
 			if(b.checkGameState()==WIN)
 			{
-				cout<<endl<<" AI \" phenom\" has won the game! F**K you Looser Shit\n";
+				cout<<endl<<" AI \" phenom\" has won the game!\n";
 				break;
 			}	
 		}
